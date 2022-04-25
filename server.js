@@ -36,7 +36,7 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.h0fsw.mongodb.ne
     app.get('/', (req, res) => {
       db.collection('quotes').find().toArray()
         .then(results => {
-          res.render('index.ejs', { quotes: results })
+          res.render('./views/index.ejs', { quotes: results })
         })
         .catch(error => console.error(error))
         res.render('index.ejs', {})
